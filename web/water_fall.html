@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/water_fall.css">
+    <link rel="stylesheet" media="screen and (max-width: 600px)" href="css/small.css" />
+</head>
+<body>
+	<div id="nav">
+		<ul>
+			<li class="lhz">LHZ</li>
+			<li><a href="index.html" >HOME</a></li>
+			<li><a href="javascript:void(0)" class="nav_act">water_fall</a></li>
+			<!-- <li><a href="javascript:void(0)">Canvas</a></li> -->
+		</ul>
+	</div>
+
+	<div id="banner">
+		<div class="wat_f">water_fall</div>
+	</div>
+   
+   <div class="row">
+  	<div class="col-xs-6 col-md-4 w_left">
+  	 
+  	</div>
+  	<div class="col-xs-6 col-md-4 w_mid"></div>
+  	<div class="col-xs-6 col-md-4 w_right"></div>
+	</div>
+
+
+
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/jq.fn.water.js"></script>
+<script>
+var check=0;
+// $("body").wf_bot();
+$(function(){
+$(".row").fmove();
+var num = 0;
+var c=0;
+//		var timer = setInterval(fn,30);
+		var raf = requestAnimationFrame(fn);
+		function fn() {
+			num++;
+            c+=2;
+			$("#banner")[0].style.backgroundColor = "hsl("+num+",50%,60%)";
+			// $("#banner .wat_f")[0].style.color="hsl("+c+",50%,60%)";
+			// $("#banner .wat_f")[0].style.textShadow="0px 0px  40px hsl("+c+",50%,60%)"
+			setTimeout(function(){
+				raf = requestAnimationFrame(fn);
+			},100)
+			
+			if(num >= 240) {
+//				clearInterval(timer);
+				// cancelAnimationFrame(raf);//清除动画
+				num=0;
+			}
+		}
+})
+console.log($(".row").children()[1]);
+
+$(window).scroll(function(){
+	console.log($(".row")[0]);
+  if($(".row")[0].getBoundingClientRect().bottom <= document.documentElement.clientHeight){
+  	 alert("增加10个box");
+  	 $(".row").fmove();
+  }
+})
+$(function(){
+if($("body")[0].offsetWidth<600){
+		$(".lhz").show().siblings().hide();
+		$(".lhz")[0].style.cursor="pointer";
+		$(".lhz").click(function(){
+			if(check==1){
+				$(".lhz").show().siblings().hide();
+				    check=0;
+			}
+			else{
+				$(".lhz").show().siblings().show();
+				   check=1;
+			}
+			
+			
+
+		})
+
+	}
+})
+	// console.log($("body")[0].offsetWidth);
+	
+
+	
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+ @media screen and (max-width: 600px) {
+   #nav{
+   	width: 20%;
+   	left:20%;
+   	margin:-15%;
+   	top:80px;
+   	position: absolute;
+
+   }
+   #nav ul{
+   	width: 100%;
+   }
+   #nav ul li{
+   	margin: 0;
+   	display: block;
+   	float: none;
+   	background-color: rgba(102,102,204,0.33);
+   	text-align: center;
+   }
+   #nav ul li a {
+   	padding: 0;
+   	display: block;
+   }
+   #nav ul li a:hover{
+   		background-color: rgba(102,102,204,0.33);
+   }
+   #nav ul li:nth-child(1){
+   	 margin: 0;
+   }
+  }

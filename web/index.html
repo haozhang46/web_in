@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/swiper.min.css">
+  <style>
+    .jxq:hover .jiaoxiang_t{
+           display:block;
+    }
+  </style>
+</head>
+<body>
+	<div id="nav">
+		<ul>
+			<li class="lhz">LHZ</li>
+			<li><a href="javascript:void(0)" class="nav_act">HOME</a></li>
+			<li><a href="water_fall.html">water_fall</a></li>
+			<!-- <li><a href="javascript:void(0)">Canvas</a></li> -->
+		</ul>
+	</div>
+	<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+         <div class="height_1">
+         	<div class="L">L</div>
+         </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="height_2">
+           <div class="H">H</div>
+          </div>
+         </div>
+        <div class="swiper-slide">
+           <div class="height_3">
+             <div class="Z">Z</div>
+           </div>
+         </div>
+    </div>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"></div>
+    
+    <!-- 如果需要导航按钮 -->
+    <div class="swiper-button-prev" style=" background-image: none;">&lt;</div>
+    <div class="swiper-button-next" style=" background-image: none; right:18px;">&gt;</div>
+    
+  
+</div>
+
+<div id="video_m">
+    <div class="bigo_name">
+     <ul>
+        <li class="bigo_t">
+        冰菓 Hyouka
+        </li>
+        <li class="jojo_t">
+        JOJO的奇妙冒险
+        </li>
+     </ul>
+     
+     
+       <div class="bingguo">
+          <embed height="415" width="544" quality="high" allowfullscreen="true" type="application/x-shockwave-flash" src="http://static.hdslb.com/miniloader.swf" flashvars="aid=4044639&page=1" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash"></embed>   
+       </div>
+
+       <div class="jojo">
+          <embed height="415" width="544" quality="high" allowfullscreen="true" type="application/x-shockwave-flash" src="http://static.hdslb.com/miniloader.swf" flashvars="aid=2320389&page=1" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash"></embed>
+
+
+       </div>
+      
+   </div>
+   
+   <div class=""></div>
+  
+</div>
+    
+  <script src="js/swiper-3.2.7.min.js"></script>
+  <script src="js/jquery-1.11.3.min.js"></script>
+  <script>  
+    var mySwiper = new Swiper ('.swiper-container', {
+    direction: 'horizontal',
+    loop: true,
+    autoHeight:500,
+    speed:3000,
+    autoplay:1,
+    // 如果需要分页器
+    pagination: '.swiper-pagination',
+    height:500,
+    // 如果需要前进后退按钮
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    // autoplayDisableOnInteraction : false,
+    // 如果需要滚动条
+    // scrollbar: '.swiper-scrollbar',       
+  })
+         
+  
+  $(".jojo_t").on("click",function(){
+   $(this).css({
+      "border-bottom": "3px solid white",
+    })
+   $(".bingguo").css({
+    "display":"none",
+   })
+    $(".jojo").css({
+    "display":"block",
+   })
+    $(".bigo_t").css({
+      "border-bottom":"1px solid #A9B55E",
+      "height":"48",
+    })
+  })
+ 
+ $(".bigo_t").on("click",function(){
+     $(this).css({
+      "border-bottom": "3px solid white",
+    })
+    $(".bingguo").css({
+    "display":"block",
+   })
+     $(".jojo").css({
+    "display":"none",
+   })
+    $(".jojo_t").css({
+      "height":"48",
+      "border-bottom":"1px solid #A9B55E",
+    })
+ })
+       
+  </script>
+</body>
+</html>
