@@ -86,11 +86,32 @@ if($("body")[0].offsetWidth<600){
 				   check=1;
 			}
 			
-			
-
 		})
 
 	}
+})
+$(window).resize(function(){
+	//600
+	if($("body")[0].offsetWidth<600){
+		$(".lhz").show().siblings().hide();
+		$(".lhz")[0].style.cursor="pointer";
+		$(".lhz").click(function(){
+			if(check==1){
+				$(".lhz").show().siblings().hide();
+				    check=0;
+			}
+			else{
+				$(".lhz").show().siblings().show();
+				   check=1;
+			}			
+		})
+	}
+	//>600recover
+	if($("body")[0].offsetWidth>600){
+		$(".lhz").show().siblings().show();
+	}
+
+
 })
 	// console.log($("body")[0].offsetWidth);
 	
